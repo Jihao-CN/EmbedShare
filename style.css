@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'MiSans';
+    src: url('misans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --safe-area: 5vw;
+    --card-spacing: 2rem;
+}
+
+body {
+    margin: 0;
+    font-family: 'MiSans', sans-serif;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-y: auto;
+    position: relative;
+    background: none;
+}
+
+.top-spacer {
+    height: 60px;
+    width: 100%;
+    pointer-events: none;
+    user-select: none;
+}
+
+.sites-container {
+    padding: var(--safe-area);
+    display: grid;
+    gap: var(--card-spacing);
+    background: white;
+    grid-template-columns: repeat(auto-fit, minmax(300px, min(100%, 800px)));
+    justify-content: center;
+}
+
+.site-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 2rem;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.site-card:hover {
+    transform: translateY(-5px);
+}
+
+.preview-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.tag-container span {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .preview-image {
+        height: 250px;
+    }
+}
